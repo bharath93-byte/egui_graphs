@@ -30,11 +30,11 @@ impl<E: Clone> From<EdgeProps<E>> for DefaultEdgeShape {
             selected: edge.selected,
             label_text: edge.label,
 
-            width: 2.,
-            tip_size: 15.,
+            width: 0.2,
+            tip_size: 1.0,
             tip_angle: std::f32::consts::TAU / 30.,
-            curve_size: 20.,
-            loop_size: 3.,
+            curve_size: 2.,
+            loop_size: 5.,
         }
     }
 }
@@ -68,7 +68,7 @@ impl<N: Clone, E: Clone, Ty: EdgeType, Ix: IndexType, D: DisplayNode<N, E, Ty, I
     ) -> Vec<egui::Shape> {
         let mut res = vec![];
 
-        let label_visible = ctx.style.labels_always || self.selected;
+        let label_visible = self.selected;
 
         let style = if self.selected {
             ctx.ctx.style().visuals.widgets.active
