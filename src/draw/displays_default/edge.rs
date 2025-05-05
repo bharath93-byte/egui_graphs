@@ -30,7 +30,7 @@ impl<E: Clone> From<EdgeProps<E>> for DefaultEdgeShape {
             selected: edge.selected,
             label_text: edge.label,
 
-            width: 0.2,
+            width: 0.4,
             tip_size: 4.0,
             tip_angle: std::f32::consts::TAU / 30.,
             curve_size: 2.,
